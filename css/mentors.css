@@ -1,0 +1,12 @@
+.singleMentorImage {
+  border-radius: 10px;
+}
+.mentorDesignation {
+  font-size: 18px;
+  text-transform: capitalize;
+}
+@media (min-width: 600px) {
+  .singleMentorImage {
+    height: 350px !important;
+  }
+}

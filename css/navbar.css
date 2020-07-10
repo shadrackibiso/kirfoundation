@@ -1,0 +1,174 @@
+/* NAVBAR */
+@keyframes slide {
+  from {
+    right: -100%;
+  }
+  to {
+    right: 0;
+  }
+}
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.15;
+  }
+}
+.navBar {
+  background-color: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  /* border-bottom: 1px solid lightgrey; */
+  z-index: 7;
+}
+.navLogo a {
+  font-family: mainFont;
+  font-size: 30px;
+  font-weight: 600;
+  color: var(--main-color);
+  font-size: 25px;
+}
+.navLogo a:hover {
+  color: var(--main-color);
+}
+.navMenu {
+  display: flex;
+  align-items: center;
+}
+.navMenu ul {
+  list-style-type: none;
+  margin: 0;
+  display: inline-flex;
+  align-items: center;
+}
+.nav-link {
+  padding: 0 !important;
+}
+.navMenu ul li {
+  margin-right: 20px;
+  cursor: pointer;
+  transition: 0.2s ease;
+  color: black;
+  overflow: hidden;
+  position: relative;
+}
+.navMenu ul li:last-child {
+  padding-right: 0;
+  margin-right: 0;
+}
+.navMenu ul li a,
+.navMenuMobile ul li a {
+  color: inherit;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: bold;
+}
+.navMenu ul li::after {
+  content: "";
+  position: relative;
+  display: flex;
+  width: 50%;
+  height: 2px;
+  left: -100%;
+  background-color: black;
+  transition: 0.3s ease;
+}
+.navMenu ul li:hover::after {
+  left: 0;
+}
+.navMenu ul .active::after {
+  left: 0;
+  width: 100%;
+}
+.menuIcon {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  color: white;
+}
+.menuCloseBtn {
+  font-size: 18px;
+}
+.mobileSideNav {
+  display: none;
+}
+.navBlind {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  background-color: black;
+  opacity: 0.15;
+  animation: fade 0.2s ease both;
+  animation-delay: 0.18s;
+}
+.navMenuMobile {
+  display: flex;
+  flex-direction: column !important;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: white;
+  height: 100vh;
+  width: 70%;
+  z-index: 20;
+  overflow: scroll;
+  animation: slide 0.2s ease;
+}
+.navMenuMobile ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: right;
+  margin: 15px 0px 0px;
+  padding: 0;
+}
+.navMenuMobile ul li {
+  padding: 15px 25px;
+  text-align: right;
+  overflow: hidden;
+  position: relative;
+}
+.navMenuMobile ul li a {
+  z-index: 1;
+}
+.navMenuMobile ul li::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  background-color: inherit;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  transform: scaleX(0);
+  opacity: 0;
+  border-radius: 100px;
+  transition: 0.2s ease;
+}
+.navMenuMobile ul li:hover::before {
+  content: "";
+  background-color: lightgrey;
+  border-radius: 0;
+  opacity: 1;
+  transform: scaleX(1);
+}
+.navMenuMobile ul .active {
+  color: var(--main-color);
+}
+@media screen and (min-width: 800px) {
+  .navBar {
+    padding: 25px 100px;
+  }
+}
