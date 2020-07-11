@@ -6,7 +6,7 @@
             <div class="card dropShadow">
                 <!-- image -->
                 <div class="cardImage">
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/4620.jpg" />
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/event.png" />
                 </div>
                 <!-- details -->
                 <div class="cardDetails">
@@ -30,7 +30,7 @@
             <div class="card dropShadow">
                 <!-- image -->
                 <div class="cardImage">
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/4620.jpg" />
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/event.png" />
                 </div>
                 <!-- details -->
                 <div class="cardDetails">
@@ -54,7 +54,7 @@
             <div class="card dropShadow">
                 <!-- image -->
                 <div class="cardImage">
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/4620.jpg" />
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/event.png" />
                 </div>
                 <!-- details -->
                 <div class="cardDetails">

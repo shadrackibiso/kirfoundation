@@ -5,7 +5,7 @@
     <div class="bannerSmall">
         <div class="bannerBlind"></div>
         <div class="bannerSmallContent">
-            <div class="bannerSmallHead">Blog</div>
+            <div class="bannerSmallHead">Community</div>
         </div>
     </div>
      <!-- ==========      
@@ -25,10 +25,11 @@
                     <!-- title -->
                     <h2 class="title bold green"><?php the_title(); ?></h2>
                     <!-- date -->
-                    <p class='grey m-0'><?php echo get_the_date(); ?></p>
+                    <h4 class='grey m-0'><?php echo get_post_meta( $post->ID, "mentor_designation", true ); ?></h4>
                     <!-- social network links -->
                     <div class="cardSocials mt-3">
                         <a href="#" title="facebook"><i class="fa fa-facebook"></i></a>
+                        <a href="#" title="instagram"><i class="fa fa-instagram"></i></a>
                         <a href="#" title="twitter"><i class="fa fa-twitter"></i></a>
                         <a href="#" title="linkedin"><i class="fa fa-linkedin"></i></a>
                     </div>

@@ -9,7 +9,7 @@
         </div>
     </div>
      <!-- ==========      
-      MENTORS
+      BLOGS
      ===========-->
      <div class="section archiveSection">
          <!-- featured post -->

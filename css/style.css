@@ -23,8 +23,8 @@
   scroll-behavior: smooth;
 }
 :root {
-  --main-color: #01b43d;
-  --sec-color: #e90101;
+  --main-color: #009231;
+  --sec-color: #f5c629;
 }
 body {
   background-color: white !important;
@@ -103,13 +103,14 @@ h6 p {
 }
 .mainBtn {
   background-color: rgba(0, 0, 0, 0);
-  color: black;
+  color: var(--main-color);
   padding: 5px 15px;
-  border: 2px solid black;
+  border: 2px solid var(--main-color);
   transition: 0.4s ease;
   font-family: mainFont;
   text-transform: uppercase;
   font-size: 12px;
+  border-radius: 50px;
   position: relative;
   overflow: hidden;
   z-index: 1;
@@ -124,7 +125,8 @@ h6 p {
   position: absolute;
   top: 0;
   left: -100%;
-  background-color: black;
+  background-color: var(--main-color);
+  border-radius: 50px;
   transition: 0.2s ease;
   z-index: -1;
 }
@@ -141,6 +143,7 @@ h6 p {
   padding: 5px 15px;
   border: 2px solid white;
   transition: 0.4s ease;
+  border-radius: 50px;
   overflow: hidden;
   position: relative;
   font-family: mainFont;
@@ -152,6 +155,7 @@ h6 p {
   width: 100%;
   height: 100%;
   position: absolute;
+  border-radius: 50px;
   top: 0;
   left: -100%;
   background-color: white;
@@ -320,24 +324,15 @@ h6 p {
   justify-content: space-between;
   align-items: center;
   font-size: 12px;
-}
-.dividerLiner {
   display: flex;
-  height: 0.5px;
-  background-color: grey;
-  width: 42%;
-}
-.dividerText {
-  padding: 0px 10px;
-  text-align: center;
-  width: 50%;
+  justify-content: center;
 }
 
 /* ==========
  partners 
  ========== */
 .partners {
-  background-color: white;
+  background-color: rgb(226, 226, 226);
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -373,25 +368,30 @@ h6 p {
 }
 
 /* ==========
- home qualities section 
+ home community section 
  ========== */
-.qualitiesImages {
-  color: var(--main-color);
+.homeCommunityImage {
+  background-color: var(--main-color);
+  padding: 25px;
+  width: 100px;
+  height: 100px;
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* ==========
- home featured product
+ home universe section
  ========== */
-.featuredProduct a {
-  background-color: white;
-  box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.2);
-  text-decoration: none !important;
-  color: inherit;
-  transition: 1 ease;
+.universe {
+  background-color: var(--sec-color);
 }
-.featuredProduct a:hover {
-  box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.2);
-  color: inherit;
+.universe h1 {
+  font-style: italic;
+  text-transform: capitalize;
+  font-family: mainFont;
+  font-size: 40px;
 }
 
 /* ==========
@@ -435,12 +435,6 @@ h6 p {
   background-color: var(--main-color);
   color: white !important;
   text-decoration: none;
-}
-.homeMentorBtnContainer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
 }
 
 /* ==========
@@ -497,10 +491,6 @@ h6 p {
 .footer {
   background-color: var(--main-color);
   padding: 50px 20px;
-  /* background-image: url(../images/footer-bg.png);
-  background-repeat: no-repeat;
-  background-position: center 70px;
-  background-size: 60%; */
 }
 .footerStart {
   display: flex;

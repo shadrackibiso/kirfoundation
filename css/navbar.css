@@ -16,7 +16,7 @@
   }
 }
 .navBar {
-  background-color: white;
+  background-color: rgba(0, 0, 0, 0);
   position: absolute;
   top: 0;
   left: 0;
@@ -39,6 +39,9 @@
 .navLogo a:hover {
   color: var(--main-color);
 }
+.navLogo a img {
+  width: 180px;
+}
 .navMenu {
   display: flex;
   align-items: center;
@@ -56,7 +59,7 @@
   margin-right: 20px;
   cursor: pointer;
   transition: 0.2s ease;
-  color: black;
+  color: white;
   overflow: hidden;
   position: relative;
 }
@@ -79,7 +82,7 @@
   width: 50%;
   height: 2px;
   left: -100%;
-  background-color: black;
+  background-color: white;
   transition: 0.3s ease;
 }
 .navMenu ul li:hover::after {

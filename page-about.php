@@ -26,9 +26,6 @@
         <?php endif; ?>
      </div>
      <!-- ==========      
-      MENTORS
-     ===========-->
-     <!-- ==========      
       NEWSLETTER
      ===========-->
      <?php get_template_part('includes/newsletter');?>
