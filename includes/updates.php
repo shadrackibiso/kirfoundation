@@ -30,10 +30,10 @@
                 <!-- details -->
                 <div class="cardDetails">
                     <!-- title -->
-                    <h4 class="title bold green">training community members</h4>
+                    <h4 class="title bold green"><?php the_title(); ?></h4>
                     <!-- excerpt -->
                     <p class="grey mt-2">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                    <?php the_excerpt(); ?>
                     </p>
                     <div class="d-flex cardFooter">
                         <!-- button -->
