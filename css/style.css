@@ -41,14 +41,13 @@ p {
   word-wrap: break-word;
   flex-wrap: wrap;
 }
-h5 {
-  font-weight: 300 !important;
-  line-height: 2rem !important;
+article {
+  line-height: 1.6rem !important;
+  font-size: 1rem !important;
 }
-h5 p {
-  font-weight: 300 !important;
-  line-height: 2rem !important;
-  font-size: 1.25rem;
+article p {
+  line-height: 1.6rem !important;
+  font-size: 1rem !important;
 }
 h6 {
   font-size: 1rem;
@@ -100,6 +99,9 @@ h6 p {
 }
 .greenBackground {
   background-color: var(--sec-color);
+}
+.yellowBackground {
+  background-color: var(--sec-color) !important;
 }
 .mainBtn {
   background-color: rgba(0, 0, 0, 0);
@@ -249,8 +251,9 @@ h6 p {
   left: 0;
 }
 .card {
-  border-radius: 5px !important;
+  /* border-radius: 5px !important; */
   overflow: hidden;
+  border: 1px solid lightgray !important;
 }
 .cardImage {
   height: 200px;
@@ -371,7 +374,7 @@ h6 p {
  home community section 
  ========== */
 .homeCommunityImage {
-  background-color: var(--main-color);
+  background-color: var(--sec-color);
   padding: 25px;
   width: 100px;
   height: 100px;
@@ -385,7 +388,11 @@ h6 p {
  home universe section
  ========== */
 .universe {
-  background-color: var(--sec-color);
+  /* background-color: rgba(231, 181, 16, 0.9); */
+  background-color: rgba(242, 204, 68, 0.98);
+  background-image: url(../images/map.jpg);
+  background-size: cover;
+  background-blend-mode: overlay;
 }
 .universe h1 {
   font-style: italic;
@@ -499,10 +506,7 @@ h6 p {
   flex-direction: column;
 }
 .footerLogo {
-  text-decoration: none;
-  color: white;
-  font-size: 25px;
-  font-family: mainFont;
+  display: flex;
 }
 .footerDescription {
   color: white;
@@ -515,15 +519,22 @@ h6 p {
   flex-direction: row;
   flex-wrap: wrap;
 }
+.footerMenu ul {
+  width: 100%;
+}
 .footerMenu ul,
 .footerCreditsMenu ul {
   margin: 0;
   padding: 0;
 }
-.footerMenu ul li {
-  list-style-type: none;
+.footerMenu ul div {
   text-transform: uppercase;
   font-weight: bold;
+  color: white;
+}
+.footerMenu ul li {
+  list-style-type: none;
+  text-transform: capitalize;
   margin-bottom: 10px;
   transition: 0.2s ease;
   color: white;
@@ -672,6 +683,9 @@ h6 p {
     align-items: flex-start;
     justify-content: space-between;
     flex-direction: row;
+  }
+  .footerMenu ul {
+    width: initial;
   }
   .footerEnd {
     display: flex;

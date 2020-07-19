@@ -36,7 +36,7 @@
                 </div>
                 <!-- post content -->
                 <div class="col mt-3 mt-lg-0">
-                    <h5 class="mt-3"><?php the_content(); ?></h5>
+                    <article class="mt-3"><?php the_content(); ?></article>
                 </div>
                 <!--  -->
             <?php endwhile; // end loop?>

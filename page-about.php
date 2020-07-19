@@ -11,9 +11,9 @@
      <!-- ==========      
       ABOUT
      ===========-->
-     <div class="section aboutSection pt-2 pt-md-5">
+     <div class="section aboutSection pt-3 pt-md-5">
         <?php if ( have_posts() ) : while ( have_posts() ) : the_post();?>
-            <h5><?php the_content(); ?></h5>
+            <article><?php the_content(); ?></article>
             <div class="cardSocials mt-3">
                 <a href="#" title="facebook"><i class="fa fa-facebook"></i></a>
                 <a href="#" title="instagram"><i class="fa fa-instagram"></i></a>

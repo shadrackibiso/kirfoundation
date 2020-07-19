@@ -29,6 +29,9 @@ function load_stylesheets() {
 add_action('wp_enqueue_scripts', 'load_stylesheets');
 
 function load_scripts() {
+	wp_register_script( 'navbar', get_template_directory_uri() . '/scripts/navbar.js', array(), '1.0', true );
+	wp_enqueue_script('navbar');
+
 	wp_register_script( 'tab', get_template_directory_uri() . '/scripts/tab.js', array(), '1.0', true );
 	wp_enqueue_script('tab');
 }

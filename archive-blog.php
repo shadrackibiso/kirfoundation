@@ -13,7 +13,7 @@
      ===========-->
      <div class="section archiveSection">
          <!-- featured post -->
-        <div class="row no-gutters mb-4 mb-md-5 dropShadow borderRound">
+        <div class="row no-gutters mb-4 mb-md-5  borderRound">
             <?php
                 $query = new WP_Query(
                     array(
@@ -39,7 +39,7 @@
                     <img src="<?php the_post_thumbnail_url(); ?>" class="coverImg" />
                 </div>
             </div>
-            <div class='col-lg-6 p-3'>
+            <div class='col-lg-6 p-3 border'>
                 <p style="font-size: 12px">FEATURED ARTICLE</p>
                 <!-- title -->
                 <h3 class="green title bold"><?php the_title(); ?></h3>
@@ -94,7 +94,7 @@
             ?>
                 <!--  -->
                 <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="card dropShadow">
+                    <div class="card ">
                         <div class="cardImage">
                             <img src="<?php the_post_thumbnail_url(); ?>" />
                         </div>

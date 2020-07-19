@@ -5,11 +5,11 @@
     <div class="bannerSmall">
         <div class="bannerBlind"></div>
         <div class="bannerSmallContent">
-            <div class="bannerSmallHead">Communities</div>
+            <div class="bannerSmallHead">Resources</div>
         </div>
     </div>
      <!-- ==========      
-      COMMUNITIES
+      RESOURCES
      ===========-->
      <div class="section pt-5 pb-5">
          <!-- intro -->
@@ -17,9 +17,9 @@
         </article>
         <!-- tab -->
         <div class="tab">
-            <button class="activeTab tabBtn" onclick="showTab(event, 1)">startups</button>
-            <button class="tabBtn" onclick="showTab(event, 2)">hubs</button>
-            <button class="tabBtn" onclick="showTab(event, 3)">angel networks</button>
+            <button class="activeTab tabBtn" onclick="showTab(event, 1)">downloads</button>
+            <button class="tabBtn" onclick="showTab(event, 2)">reports</button>
+            <button class="tabBtn" onclick="showTab(event, 3)">videos</button>
         </div>
      </div>
     
@@ -30,13 +30,13 @@
             <?php
                 $query = new WP_Query(
                     array(
-                    'post_type'=>'community',
+                    'post_type'=>'resource',
                     'posts_per_page'=>9,
                     'tax_query' => array(
                         array(
-                            'taxonomy'  => 'community_category',
+                            'taxonomy'  => 'resource_category',
                             'field'     => 'slug',
-                            'terms'     => 'startup',
+                            'terms'     => 'downloads',
                             'operator'  => 'IN'
                         )
                     )
@@ -72,16 +72,16 @@
             <?php
                 $query = new WP_Query(
                     array(
-                    'post_type'=>'community',
-                    'posts_per_page'=>9,
-                    'tax_query' => array(
-                        array(
-                            'taxonomy'  => 'community_category',
-                            'field'     => 'slug',
-                            'terms'     => 'hub',
-                            'operator'  => 'IN'
+                        'post_type'=>'resource',
+                        'posts_per_page'=>9,
+                        'tax_query' => array(
+                            array(
+                                'taxonomy'  => 'resource_category',
+                                'field'     => 'slug',
+                                'terms'     => 'reports',
+                                'operator'  => 'IN'
+                            )
                         )
-                    )
                     )
                 );
                 if ( $query->have_posts() ) : 
@@ -114,16 +114,16 @@
             <?php
                 $query = new WP_Query(
                     array(
-                    'post_type'=>'community',
-                    'posts_per_page'=>9,
-                    'tax_query' => array(
-                        array(
-                            'taxonomy'  => 'community_category',
-                            'field'     => 'slug',
-                            'terms'     => 'angel network',
-                            'operator'  => 'IN'
+                        'post_type'=>'resource',
+                        'posts_per_page'=>9,
+                        'tax_query' => array(
+                            array(
+                                'taxonomy'  => 'resource_category',
+                                'field'     => 'slug',
+                                'terms'     => 'videos',
+                                'operator'  => 'IN'
+                            )
                         )
-                    )
                     )
                 );
                 if ( $query->have_posts() ) : 

@@ -10,9 +10,9 @@
     <!-- ==========
         NAVBAR      
      ===========-->
-    <header class="navBar">
+    <header class="navBar" id="navbar">
       <div class="navLogo">
-        <a href="#" class="btnLink">
+        <a href="/" class="btnLink">
           <img src="<?php echo get_template_directory_uri(); ?>/images/logo.png" />
         </a>
       </div>

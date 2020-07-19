@@ -7,7 +7,7 @@
     <div class="bannerContent">
         <div class="bannerHead">Awesome's Borderless</div>
         <div class="bannerSub">catering to the needs of innovators in non-obvious commercial cities.</div>
-        <a href="#"><button class="subBtn">learn more</button></a>
+        <a href="/"><button class="subBtn">learn more</button></a>
         </div>
     </div>
     <!-- ==========      
@@ -45,12 +45,12 @@
                 <div class="homeCommunityImage mb-3">
                     <img src="<?php echo get_template_directory_uri(); ?>/images/icons/startups-icon.png" />
                 </div>
-                <h3 class="title">startups</h3>
+                <h3 class="title green">startups</h3>
                 <p class="grey">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                 </p>
                 <div class="d-flex justify-content-center">
-                    <a href="#" class="mainBtn">learn more</a>
+                    <a href="/community" class="mainBtn">learn more</a>
                 </div>
             </div>
             <!--  -->
@@ -58,12 +58,12 @@
                 <div class="homeCommunityImage mb-3">
                     <img src="<?php echo get_template_directory_uri(); ?>/images/icons/hub-icon.png" />
                 </div>
-                <h3 class="title">hubs</h3>
+                <h3 class="title green">hubs</h3>
                 <p class="grey">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                 </p>
                 <div class="d-flex justify-content-center">
-                    <a href="#" class="mainBtn">learn more</a>
+                    <a href="/community" class="mainBtn">learn more</a>
                 </div>
             </div>
              <!--  -->
@@ -71,12 +71,12 @@
                 <div class="homeCommunityImage mb-3">
                     <img src="<?php echo get_template_directory_uri(); ?>/images/icons/angel-icon.png" />
                 </div>
-                <h3 class="title">angel network</h3>
+                <h3 class="title green">angel network</h3>
                 <p class="grey">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                 </p>
                 <div class="d-flex justify-content-center">
-                    <a href="#" class="mainBtn">learn more</a>
+                    <a href="/community" class="mainBtn">learn more</a>
                 </div>
             </div>
              <!--  -->
@@ -84,12 +84,12 @@
                 <div class="homeCommunityImage mb-3">
                     <img src="<?php echo get_template_directory_uri(); ?>/images/icons/event-icon.png" />
                 </div>
-                <h3 class="title">events</h3>
+                <h3 class="title green">events</h3>
                 <p class="grey">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                 </p>
                 <div class="d-flex justify-content-center">
-                    <a href="#" class="mainBtn">learn more</a>
+                    <a href="/event" class="mainBtn">learn more</a>
                 </div>
             </div>
             <!--  -->
@@ -107,73 +107,7 @@
      <!-- ==========      
       CONNECT WITH MENTORS
      ===========-->
-     <div class="section">
-        <h2 class="sectionLabel">connect with mentors</h2>
-        <div class="row">
-            <!--  -->
-            <div class="col-lg-2 col-md-4 mb-3 mb-lg-0 d-flex justify-content-center align-items-center flex-column text-center ">
-                <div class="homeMentorImage">
-                    <img class="coverImg" src="<?php echo get_template_directory_uri(); ?>/images/avatar.jpg" />
-                </div>
-                <!-- title -->
-                <h5 class="title">louis m. iwegbuna</h5>
-                <!-- designation -->
-                <p class="homeMentorDesignation">BDM, AutoDesk</p>
-                <!-- socials -->
-                <div class="homeMentorSocials">
-                    <!-- facebook -->
-                    <a href="#">
-                        <i class="fa fa-facebook"></i>
-                    </a>
-                    <!-- instagram -->
-                    <a href="#">
-                        <i class="fa fa-instagram"></i>
-                    </a>
-                    <!-- twitter -->
-                    <a href="#">
-                        <i class="fa fa-twitter"></i>
-                    </a>
-                    <!-- linkedin -->
-                    <a href="#">
-                        <i class="fa fa-linkedin"></i>
-                    </a>
-                </div>
-            </div>
-             <!--  -->
-             <div class="col-lg-2 col-md-4 mb-3 mb-lg-0 d-flex justify-content-center align-items-center flex-column text-center ">
-                <div class="homeMentorImage">
-                    <img class="coverImg" src="<?php echo get_template_directory_uri(); ?>/images/avatar.jpg" />
-                </div>
-                <!-- title -->
-                <h5 class="title">louis m. iwegbuna</h5>
-                <!-- designation -->
-                <p class="homeMentorDesignation">BDM, AutoDesk</p>
-                <!-- socials -->
-                <div class="homeMentorSocials">
-                    <!-- facebook -->
-                    <a href="#">
-                        <i class="fa fa-facebook"></i>
-                    </a>
-                    <!-- instagram -->
-                    <a href="#">
-                        <i class="fa fa-instagram"></i>
-                    </a>
-                    <!-- twitter -->
-                    <a href="#">
-                        <i class="fa fa-twitter"></i>
-                    </a>
-                    <!-- linkedin -->
-                    <a href="#">
-                        <i class="fa fa-linkedin"></i>
-                    </a>
-                </div>
-            </div>
-            <!--  -->
-        </div>
-        <div class="d-flex justify-content-center mt-3 mt-lg-5">
-            <a href="/mentors" class="mainBtn mb-3 mb-md-0 mr-md-3">see more mentors</a>
-        </div>
-     </div>
+     <?php get_template_part('includes/mentors-feed');?>
      <!-- ==========      
       NEWSLETTER
      ===========-->

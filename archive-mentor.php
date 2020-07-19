@@ -27,7 +27,7 @@
             ?>
                 <!--  -->
                 <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="card dropShadow">
+                    <div class="card">
                         <div class="cardImage">
                             <img src="<?php the_post_thumbnail_url(); ?>" />
                         </div>

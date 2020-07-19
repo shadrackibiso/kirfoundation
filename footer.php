@@ -11,7 +11,8 @@
     </div>
     <!-- footer menu  -->
     <div class="footerMenu mt-3 mt-md-0">
-      <ul class="mr-4">
+      <ul class="mr-4 mb-3 mb-md-0">
+        <div class="mb-3">about</div>
         <li><a href="#">about</a></li>
         <li><a href="#">news</a></li>
         <li><a href="#">awards</a></li>
@@ -20,8 +21,8 @@
         <li><a href="#">community</a></li>
       </ul>
       <!--  -->
-      <ul class="mr-md-4">
-        <li><a href="#">explore</a></li>
+      <ul class="mr-4 mb-3 mb-md-0">
+      <div class="mb-3">explore</div>
         <li><a href="#">programs</a></li>
         <li><a href="#">events</a></li>
         <li><a href="#">learning</a></li>
@@ -30,6 +31,7 @@
       </ul>
       <!--  -->
       <ul>
+      <div class="mb-3">startups</div>
         <li><a href="#">startups</a></li>
         <li><a href="#">hubs</a></li>
         <li><a href="#">angel network</a></li>
