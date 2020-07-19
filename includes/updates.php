@@ -25,7 +25,7 @@
             <div class="card">
                 <!-- image -->
                 <div class="cardImage">
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/event.png" />
+                    <img src="<?php the_post_thumbnail_url(); ?>" />
                 </div>
                 <!-- details -->
                 <div class="cardDetails">
