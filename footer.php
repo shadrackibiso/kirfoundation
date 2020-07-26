@@ -1,4 +1,4 @@
-<div class="section footer">
+<div class="container-fluid p-5 footer">
   <div  class="footerStart">
     <!-- footer organization -->
     <div>
@@ -64,6 +64,7 @@
     </div>
   </div>
 </div>
+
 
 <?php wp_footer(); ?>
 </body>

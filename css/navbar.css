@@ -1,10 +1,10 @@
 /* NAVBAR */
 @keyframes slide {
   from {
-    right: -100%;
+    left: -100%;
   }
   to {
-    right: 0;
+    left: 0;
   }
 }
 @keyframes fade {
@@ -16,174 +16,173 @@
   }
 }
 .navBar {
-  background-color: #00000000;
-  position: fixed;
-  top: 0;
-  left: 0;
+  background-color: var(--sec-color);
   width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
+  padding: 15px 1rem !important;
   z-index: 7;
+  position: relative;
   transition: 0.2s ease;
 }
-.navLogo a {
+.navLogo {
   display: flex;
   font-family: mainFont;
-  font-size: 30px;
-  font-weight: 600;
-  color: var(--main-color);
-  font-size: 25px;
+  color: white;
+}
+.navLogo a {
+  color: inherit;
 }
 .navLogo a:hover {
-  color: var(--main-color);
+  color: inherit;
+  text-decoration: none;
 }
-.navLogo a img {
-  width: 150px;
+.searchIcon {
+  color: white;
 }
-.navMenu {
-  display: flex;
+.searchForm form {
+  display: none;
+  background-color: var(--sec-color);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   align-items: center;
+  padding: 15px 1rem;
+  z-index: 10;
+  animation: slide 0.2s ease;
 }
-.navMenu ul {
-  list-style-type: none;
-  margin: 0;
-  display: inline-flex;
-  align-items: center;
+.searchForm form input {
+  border: 1px solid grey;
+  background: none !important;
+  border-radius: 50px;
+  color: white;
+  padding: 3px 10px;
+  width: 100%;
+}
+.searchForm form input:focus {
+  outline: none;
+  border: 1px solid white;
 }
 .nav-link {
   padding: 0 !important;
 }
-.navMenu ul li {
-  margin-right: 20px;
-  cursor: pointer;
-  transition: 0.2s ease;
-  color: white;
-  overflow: hidden;
-  position: relative;
-}
-.navMenu ul li:last-child {
-  padding-right: 0;
-  margin-right: 0;
-}
-.navMenu ul li a,
-.navMenuMobile ul li a {
-  color: inherit;
-  text-decoration: none;
-  text-transform: uppercase;
-  font-size: 14px;
-  font-weight: bold;
-}
-.navMenu ul li::after {
-  content: "";
-  position: relative;
-  display: flex;
-  width: 50%;
-  height: 2px;
-  left: -100%;
-  background-color: white;
-  transition: 0.3s ease;
-}
-.navMenu ul li:hover::after {
-  left: 0;
-}
-.navMenu ul .active::after {
-  left: 0;
-  width: 100%;
-}
 .menuIcon {
-  position: absolute;
-  top: 20px;
-  right: 20px;
   color: white;
+  cursor: pointer;
 }
-.menuCloseBtn {
-  font-size: 18px;
-}
-.mobileSideNav {
-  display: none;
-}
-.navBlind {
+.backdrop {
   position: fixed;
   top: 0;
   left: 0;
   height: 100vh;
   width: 100%;
-  background-color: black;
-  opacity: 0.15;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 10;
   animation: fade 0.2s ease both;
   animation-delay: 0.18s;
 }
-.navMenuMobile {
+.sideNav {
+  display: none;
+}
+.sideNavMenu {
   display: flex;
   flex-direction: column !important;
   position: fixed;
   top: 0;
-  right: 0;
-  background-color: white;
+  left: 0;
+  background-color: #0c0c0c;
   height: 100vh;
   width: 70%;
   z-index: 20;
-  overflow: scroll;
+  overflow-y: auto;
   animation: slide 0.2s ease;
+  padding-bottom: 100px;
 }
-.navMenuMobile ul {
+.sideNavMenu ul {
   list-style-type: none;
   display: flex;
   flex-direction: column;
   justify-content: right;
-  margin: 15px 0px 0px;
+  margin: 0px;
   padding: 0;
 }
-.navMenuMobile ul li {
-  padding: 15px 25px;
-  text-align: right;
+.sideNavMenu ul li {
   overflow: hidden;
   position: relative;
+  color: grey;
 }
-.navMenuMobile ul li a {
-  z-index: 1;
+.sideNavMenu ul li a {
+  color: inherit;
+  text-decoration: none;
+  text-transform: capitalize;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 15px 1rem !important;
 }
-.navMenuMobile ul li::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
+.sideNavMenu ul li:hover {
+  background-color: #1c1c1c;
+}
+.sideNavMenu ul .active {
+  color: var(--main-color);
+  background-color: #1c1c1c;
+  border-left: 3px solid var(--main-color);
+}
+.menuLabel {
+  padding: 15px 1rem;
+  color: grey;
+  text-transform: capitalize;
   display: flex;
-  background-color: inherit;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  transform: scaleX(0);
-  opacity: 0;
-  border-radius: 100px;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  font-weight: bold;
+}
+.menuDropDown ul li {
+  padding-left: 1.3rem !important;
+}
+.dropdownCaret {
   transition: 0.2s ease;
 }
-.navMenuMobile ul li:hover::before {
-  content: "";
-  background-color: lightgrey;
-  border-radius: 0;
-  opacity: 1;
-  transform: scaleX(1);
+.rotateCaret {
+  transform: rotate(-180deg);
 }
-.navMenuMobile ul .active {
-  color: var(--main-color);
+
+@media screen and (min-width: 576px) {
+  .sideNavMenu {
+    width: 30%;
+  }
+  .searchForm form {
+    display: flex !important;
+    background-color: none;
+    position: relative;
+    top: initial;
+    left: initial;
+    width: initial;
+    height: initial;
+    display: flex;
+    align-items: center;
+    padding: initial;
+    z-index: 3;
+    animation: none !important;
+  }
 }
-@media screen and (min-width: 600px) and (max-width: 1024px) {
-  .navBar {
-    padding: 25px 50px !important;
+
+@media screen and (min-width: 992px) {
+  .sideNavMenu {
+    position: relative;
+    width: 100%;
+    z-index: 20;
+    overflow-y: auto;
+    animation: none;
   }
-  .navMenuMobile {
-    width: 30% !important;
+  .sideNav {
+    display: flex !important;
   }
-  .navMenuMobile ul li {
-    padding: 15px 30px;
-  }
-}
-@media screen and (min-width: 800px) {
-  .navBar {
-    padding: 20px 100px;
+  .menuLabel:hover {
+    background-color: #1c1c1c;
   }
 }

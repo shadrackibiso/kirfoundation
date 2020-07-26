@@ -3,52 +3,39 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>StartupSouth</title>
+    <title>MovieSlack</title>
     <?php wp_head(); ?>
   </head>
   <body>
     <!-- ==========
         NAVBAR      
      ===========-->
-    <header class="navBar" id="navbar">
-      <div class="navLogo">
-        <a href="/" class="btnLink">
-          <img src="<?php echo get_template_directory_uri(); ?>/images/logo.png" />
-        </a>
+    <header class="navBar container-fluid" id="navbar">
+      <div class="d-flex">
+        <!-- menu icons -->
+        <div class="menuIcon mr-2 d-lg-none">
+          <i class="fa fa-bars" onclick="document.getElementById('sideNav').style.display='flex'"></i>
+        </div>
+        <!-- logo -->
+        <div class="navLogo">MovieSlack</div>
       </div>
-      <nav class="navMenu d-none d-lg-flex">
-      <?php 
-            wp_nav_menu(
-                array(
-                    'theme_location' => 'top-menu',
-                    'walker' => new wp_bootstrap_navwalker()
-                )
-                );
-        ?>
-      </nav>
-      <!-- MOBILE MENU -->
-      <div class="d-lg-none menuIcon">
-        <i class="fa fa-bars" onclick="document.getElementById('mobileSideNav').style.display='flex'"></i>
-      </div>
-      <div class="mobileSideNav" id="mobileSideNav">
-        <div
-          class="navBlind"
-          onclick="document.getElementById('mobileSideNav').style.display='none'"
-        ></div>
-        <nav class="navMenuMobile d-lg-none shadow-lg" id="navMenuMobile">
-          <ul>
-            <li class="menuCloseBtn">
-              <i class="fa fa-close" onclick="document.getElementById('mobileSideNav').style.display='none'"></i>
-            </li>
-          </ul>
-          <?php 
-            wp_nav_menu(
-                array(
-                    'theme_location' => 'top-menu',
-                    'walker' => new wp_bootstrap_navwalker()
-                )
-            );
-          ?>
-        </nav>
+      <!-- search -->
+      <div class="searchBar d-flex align-items-center">
+        <div class="searchForm mr-3 mr-md-0">
+          <!-- search form -->
+          <form id="searchForm">
+            <input type="text" placeholder="search" />
+            <!-- icon to hide search form on mobile -->
+            <div class="searchIcon d-md-none ml-3" 
+            onclick="document.getElementById('searchForm').style.display='none'">
+              <i class="fa fa-close"></i>
+            </div>
+          </form>
+        </div>
+        <!-- search icon to display search form on mobile -->
+        <div class="searchIcon d-md-none"
+        onclick="document.getElementById('searchForm').style.display='flex'">
+          <i class="fa fa-search"></i>
+        </div>
       </div>
     </header>
