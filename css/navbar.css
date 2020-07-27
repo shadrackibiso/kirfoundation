@@ -55,17 +55,38 @@
   z-index: 10;
   animation: slide 0.2s ease;
 }
-.searchForm form input {
+.searchFormWrap {
   border: 1px solid grey;
-  background: none !important;
   border-radius: 50px;
+  display: flex;
+  align-items: center;
+  padding: 2px;
+}
+.searchForm form input {
+  border: none;
+  background: none !important;
   color: white;
-  padding: 3px 10px;
   width: 100%;
+  padding: 0px 10px;
+  border-radius: 50px;
 }
 .searchForm form input:focus {
   outline: none;
-  border: 1px solid white;
+  border: none;
+}
+.searchBtn {
+  background-color: grey;
+  border-radius: 50px;
+  border: none;
+  color: rgb(51, 51, 51);
+  transition: 0.2s ease;
+}
+.searchBtn:hover {
+  background-color: rgb(85, 85, 85);
+}
+.searchBtn:focus {
+  outline: none;
+  border: none;
 }
 .nav-link {
   padding: 0 !important;
@@ -114,6 +135,7 @@
   overflow: hidden;
   position: relative;
   color: grey;
+  transition: 0.2s ease;
 }
 .sideNavMenu ul li a {
   color: inherit;
@@ -127,9 +149,9 @@
   background-color: #1c1c1c;
 }
 .sideNavMenu ul .active {
-  color: var(--main-color);
+  color: white;
   background-color: #1c1c1c;
-  border-left: 3px solid var(--main-color);
+  border-left: 3px solid white;
 }
 .menuLabel {
   padding: 15px 1rem;
@@ -140,6 +162,7 @@
   align-items: center;
   cursor: pointer;
   font-weight: bold;
+  transition: 0.2s ease;
 }
 .menuDropDown ul li {
   padding-left: 1.3rem !important;

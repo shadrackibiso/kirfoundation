@@ -23,8 +23,11 @@
       <div class="searchBar d-flex align-items-center">
         <div class="searchForm mr-3 mr-md-0">
           <!-- search form -->
-          <form id="searchForm">
-            <input type="text" placeholder="search" />
+          <form id="searchForm" method="get" action="<?php print site_url(); ?>" >
+            <div class="searchFormWrap">
+              <input type="text" name="s" placeholder="search" />
+              <button type="submit" title="search" class="searchBtn"><i class="fa fa-search"></i></button>
+            </div>
             <!-- icon to hide search form on mobile -->
             <div class="searchIcon d-md-none ml-3" 
             onclick="document.getElementById('searchForm').style.display='none'">
