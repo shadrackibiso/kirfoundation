@@ -19,13 +19,6 @@ function load_stylesheets() {
 
 add_action('wp_enqueue_scripts', 'load_stylesheets');
 
-function load_scripts() {
-	wp_register_script( 'tab', get_template_directory_uri() . '/scripts/tab.js', array(), '1.0', true );
-    wp_enqueue_script('tab');
-}
-
-add_action('wp_enqueue_scripts', 'load_scripts');
-
 require_once('wp-bootstrap-navwalker.php');
 
 /** =============
@@ -40,13 +33,11 @@ add_theme_support('post-thumbnails');
 	=====
 */
 register_nav_menus(
-
     array(
         'primary-menu' => 'Primary Menu',
         'movie-year' => 'Movie Year',
         'movie-genre' => 'Movie Genre',
     )
-
 );
 
 /** ====================
@@ -58,6 +49,4 @@ function remove_admin_login_header() {
 }
 add_action( 'get_header', "remove_admin_login_header");
 
-
 ?>
-

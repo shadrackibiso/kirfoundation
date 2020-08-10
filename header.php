@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MovieSlack</title>
+    <title><?php wp_title(); ?></title>
     <?php wp_head(); ?>
   </head>
   <body>
@@ -25,7 +25,7 @@
           <!-- search form -->
           <form id="searchForm" method="get" action="<?php print site_url(); ?>" >
             <div class="searchFormWrap">
-              <input type="text" name="s" placeholder="search" />
+              <input type="text" name="s" id="searchFormInput" placeholder="search" />
               <button type="submit" title="search" class="searchBtn"><i class="fa fa-search"></i></button>
             </div>
             <!-- icon to hide search form on mobile -->
@@ -37,7 +37,8 @@
         </div>
         <!-- search icon to display search form on mobile -->
         <div class="searchIcon d-md-none"
-        onclick="document.getElementById('searchForm').style.display='flex'">
+        onclick="document.getElementById('searchForm').style.display='flex';
+        document.getElementById('searchFormInput').focus()">
           <i class="fa fa-search"></i>
         </div>
       </div>

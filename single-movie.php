@@ -22,7 +22,7 @@
                     <div class="col-lg-5 col-md-8 pl-md-3 pt-3 pt-md-0">
                         <!-- movie title -->
                         <h3 class="text-white"><?php the_title(); ?></h3>
-                        <div class=" pt-1 pb-3 d-flex align-items-center">
+                        <div class=" pt-1 pb-2 d-flex align-items-center">
                             <!-- movie year-->
                             <div class="singleMovieYear pr-3">
                                 <a href="/<?php echo date("Y", strtotime($post->post_date)) ?>-movies">
