@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#000000">
     <title><?php wp_title(); ?></title>
     <?php wp_head(); ?>
   </head>
@@ -10,36 +11,67 @@
     <!-- ==========
         NAVBAR      
      ===========-->
-    <header class="navBar container-fluid" id="navbar">
-      <div class="d-flex">
-        <!-- menu icons -->
-        <div class="menuIcon mr-2 d-lg-none">
+     <header class="navBar" id="navbar">
+       <div class="container">
+       <!-- =========
+      NAV LOGO
+      ========== -->
+      <div class="navLogo">
+        <!-- hamburger menu -->
+        <div class="d-md-none menuIcon mr-3">
           <i class="fa fa-bars" onclick="document.getElementById('sideNav').style.display='flex'"></i>
         </div>
         <!-- logo -->
-        <div class="navLogo">MovieSlack</div>
+        <a href="/" class="btnLink">
+          <!-- <img src="<?php echo get_template_directory_uri(); ?>/images/logo_black.svg" /> -->
+          Greyich...
+        </a>
       </div>
-      <!-- search -->
-      <div class="searchBar d-flex align-items-center">
-        <div class="searchForm mr-3 mr-md-0">
-          <!-- search form -->
-          <form id="searchForm" method="get" action="<?php print site_url(); ?>" >
-            <div class="searchFormWrap">
-              <input type="text" name="s" id="searchFormInput" placeholder="search" />
-              <button type="submit" title="search" class="searchBtn"><i class="fa fa-search"></i></button>
+      <!-- =========
+      DESKTOP MENU 
+      ========== -->
+      <nav class="navMenu d-none d-md-flex">
+      <?php 
+            wp_nav_menu(
+                array(
+                    'theme_location' => 'primary-menu',
+                    'walker' => new wp_bootstrap_navwalker()
+                )
+                );
+        ?>
+      </nav>
+      <!-- =========
+      MOBILE SIDENAV 
+      ========== -->
+      <div class="sideNav d-lg-none" id="sideNav">
+        <!-- backdrop -->
+        <div
+          class="backdrop"
+          onclick="document.getElementById('sideNav').style.display='none'"
+        ></div>
+        <!-- sidenav menu -->
+        <nav class="sideNavMenu d-lg-none" id="navMenuMobile">
+          <!-- menu header -->
+          <div class="sideNavHeader">
+            <!-- menu label -->
+            <div class="sideNavMenuLabel">Menu</div>
+            <!-- close btn -->
+            <div class="menuCloseBtn">
+            <i class="fa fa-close" onclick="document.getElementById('sideNav').style.display='none'"></i>
             </div>
-            <!-- icon to hide search form on mobile -->
-            <div class="searchIcon d-md-none ml-3" 
-            onclick="document.getElementById('searchForm').style.display='none'">
-              <i class="fa fa-close"></i>
-            </div>
-          </form>
-        </div>
-        <!-- search icon to display search form on mobile -->
-        <div class="searchIcon d-md-none"
-        onclick="document.getElementById('searchForm').style.display='flex';
-        document.getElementById('searchFormInput').focus()">
-          <i class="fa fa-search"></i>
-        </div>
+          </div>
+          <!-- menu items -->
+          <div class="sideNavMenuItems">
+          <?php 
+            wp_nav_menu(
+                array(
+                    'theme_location' => 'primary-menu',
+                    'walker' => new wp_bootstrap_navwalker()
+                )
+            );
+          ?>
+          </div>
+        </nav>
+      </div>
       </div>
     </header>

@@ -1,98 +1,83 @@
 <?php get_header(); ?>
-<div class="container-fluid p-0">
-    <div class="row no-gutters">
+<!-- ==========      
+    FEATURED  POSTS
+===========-->
+<div class="mt-5">
+    <?php get_template_part('templates/featured-posts') ?>
+</div>
+<!-- ==========      
+    CONTENT LAYOUT
+===========-->
+<div class="container mt-4">
+    <div class="row">
+        <!-- ==========      
+            RECENT  POSTS
+        ===========-->
+        <div class="col-lg-9">
+            <div class="sectionLabel">
+                recent posts
+            </div>
+            <div class="row mt-4 mb-4">
+                <?php
+                    $paged = (get_query_var('page')) ? get_query_var('page') : 1;
 
-        <!-- side nav -->
-        <div class="col-lg-2">
-            <?php get_template_part('sidenav') ?>
+                    $query = new WP_Query(
+                        array(
+                        'post_type'=>'blog',
+                        'posts_per_page'=>3,
+                        'paged'=>$paged,
+                        // 'tax_query' => array(
+                        //     array(
+                        //         'taxonomy'  => 'blog_category',
+                        //         'field'     => 'slug',
+                        //         'terms'     => 'featured',
+                        //         'operator'  => 'IN'
+                        //     )
+                        // )
+                        )
+                    );
+
+                    if ( $query->have_posts() ) : 
+                    while ( $query->have_posts() ) : $query->the_post();
+                ?>
+                <!-- POST CONTENT -->
+                    <?php get_template_part('templates/post-template'); ?>
+                <!-- POST CONTENT END -->
+                <?php 
+                endwhile; // end loop
+                ?>
+                <!-- pagination -->
+                <div class="col-12 mt-1">
+                    <div class="pagination p-1">
+                        <?php echo paginate_links(array('total' => $query->max_num_pages)) ?>
+                    </div>
+                </div>
+                <!--  -->
+                <?php else: ?>
+                    <div class="col-12">
+                        <p>Sorry, no post to display.</p>
+                    </div>
+                <?php
+                // Reset things, for good measure
+                wp_reset_postdata();
+                // end the loop
+                endif;
+                ?>
+            </div>
         </div>
-
-        <!-- content -->
-        <div class="col-lg-10 bodyContainer">
-            <!-- ==========      
-            POPULAR
-            ===========-->
-            <div class="p-0 pl-0 pr-0 pr-md-3 pl-md-3 pt-3">
-                <h5 class="sectionLabel pb-3 pl-3 pl-md-0 mb-0">popular</h5>
-                <div class="overflowContainer pl-3 pl-md-0">
-                <div class="row align-items-stretch no-gutters pr-3 pr-lg-0">
-                    <?php
-                    $query = new WP_Query(
-                        array(
-                        'post_type'=>'movie',
-                        'posts_per_page'=> 6,
-                        'tax_query' => array(
-                            array(
-                                'taxonomy'  => 'movie_category',
-                                'field'     => 'slug',
-                                'terms'     => 'popular',
-                                'operator'  => 'IN'
-                            )
-                        )
-                        )
-                    );
-                    if ( $query->have_posts() ) : 
-                    while ( $query->have_posts() ) : $query->the_post();
-                    ?>
-                    <!--  -->
-                        <?php get_template_part('templates/movie-card') ?>
-                        <!--  -->
-                        <?php endwhile; // end while ?>
-                        <?php else: ?>
-                            <p style="color: grey">Sorry, no post to display.</p>
-                        <?php
-                    // Reset things
-                    wp_reset_postdata();
-                    // end the loop
-                    endif;
-                    ?>
-                    <div class="col-lg-6 d-mlg-none mb-2 p-1"></div>
-                </div>
-                </div>
-            </div>
-             <!-- ==========      
-                RECENT
-            ===========-->
-            <div class="container-fluid p-3">
-                <h5 class="sectionLabel pb-3 mb-0">recent</h5>
-                <div class="row align-items-stretch no-gutters">
-                    <?php
-                    $query = new WP_Query(
-                        array(
-                        'post_type'=>'movie',
-                        'posts_per_page'=> 12,
-                        'tax_query' => array(
-                            array(
-                                'taxonomy'  => 'movie_category',
-                                'field'     => 'slug',
-                                'terms'     => 'popular',
-                                'operator'  => 'NOT IN'
-                            )
-                        )
-                        )
-                    );
-                    if ( $query->have_posts() ) : 
-                    while ( $query->have_posts() ) : $query->the_post();
-                    ?>
-                    <!--  -->
-                    <?php get_template_part('templates/movie-card') ?>
-                    <!--  -->
-                    <?php endwhile; // end while ?>
-                    <?php else: ?>
-                        <p style="color: grey">Sorry, no post to display.</p>
-                    <?php
-                    // Reset things
-                    wp_reset_postdata();
-                    // end the loop
-                    endif;
-                    ?>
-                </div>
-            </div>
-
+        <!-- ==========      
+            SIDE BAR
+        ===========-->
+        <div class="col-lg-3">
+        <?php get_template_part('templates/sidebar') ?>
         </div>
     </div>
 </div>
-
+<!-- ==========      
+    NEWSLETTER
+===========-->
+<?php get_template_part('templates/newsletter') ?>
 <!-- ==========      
     FOOTER
-    ===========-->
+===========-->
+<?php get_footer(); ?>

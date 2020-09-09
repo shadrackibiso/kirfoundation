@@ -1,37 +1,70 @@
+/*  */
 @font-face {
-  font-family: mainFont;
-  src: url(../fonts/ProductSans-Black.ttf);
+  font-family: labelFont;
+  src: url(../fonts/Canela-Black.ttf);
 }
 @font-face {
-  font-family: subFont;
+  font-family: titleFont;
+  src: url(../fonts/Canela-Bold.ttf);
+}
+@font-face {
+  font-family: mainFont;
   src: url(../fonts/ProductSans-Regular.ttf);
 }
 @font-face {
-  font-family: subFont;
-  src: url(../fonts/ProductSans-Light.ttf);
-  font-weight: 300;
-}
-@font-face {
-  font-family: subFont;
+  font-family: mainFont;
   src: url(../fonts/ProductSans-Bold.ttf);
   font-weight: bold;
 }
 * {
   box-sizing: border-box;
-  font-family: subFont;
+  font-family: mainFont;
   scroll-behavior: smooth;
 }
 :root {
-  --main-color: #046fad;
-  --sec-color: #131313;
-  --text-color: rgb(150, 150, 150);
+  --color1: #e5a3a4;
+  --color2: #1a1a1a;
+  --color3: #818181;
 }
 body {
-  background-color: black !important;
-  overflow: hidden;
+  background-color: #121212 !important;
+  color: var(--color3) !important;
+  width: 100%;
+  overflow-x: hidden !important;
+}
+html {
+  width: 100%;
+  overflow-x: hidden !important ;
 }
 #wpadminbar {
   display: none !important;
+}
+
+/* social share button */
+.shared-counts-wrap.style-icon .shared-counts-button {
+  float: left;
+  display: block;
+  margin: 0;
+  border: 1px solid var(--color3);
+  border-radius: 50px;
+  margin-right: 8px;
+  background: var(--color3);
+  color: black;
+  transition: 0.2s ease;
+}
+.shared-counts-wrap.style-icon .shared-counts-button .shared-counts-icon svg {
+  fill: black;
+  width: 16px;
+  height: 16px;
+}
+.shared-counts-wrap.style-icon .shared-counts-button:hover {
+  background: var(--color1);
+}
+.shared-counts-wrap.style-icon
+  .shared-counts-button:hover
+  .shared-counts-icon
+  svg {
+  fill: black;
 }
 
 /* ==========
@@ -51,73 +84,137 @@ article p {
   font-size: 1rem !important;
 }
 .section {
-  padding: 50px 15px;
-  margin-right: auto;
-  margin-left: auto;
-  background-color: white;
+  padding-top: 75px;
+  padding-bottom: 75px;
 }
 .sectionLabel {
-  color: white;
+  color: var(--color1);
   text-transform: capitalize;
-  font-family: subFont;
+  font-family: labelFont;
   margin-bottom: 15px;
+  font-size: 1.4rem;
+}
+.sectionLabel h4 {
+  font-family: labelFont;
 }
 .title {
   text-transform: capitalize;
-  color: black;
-  /* font-weight: bold; */
+  color: white;
+  font-family: labelFont;
+}
+.color1 {
+  color: var(--color1);
+}
+.color2 {
+  color: var(--color2);
+}
+.color3 {
+  color: var(--color3);
+}
+.Btn {
+  filter: brightness(90%);
+  transition: 0.2s ease;
+}
+.Btn:hover {
+  filter: brightness(100%);
 }
 .mainBtn {
-  background-color: var(--main-color);
-  color: white;
-  padding: 8px 15px;
-  border: 2px solid var(--main-color);
+  background: none;
+  color: var(--color1) !important;
+  padding: 8px 0px;
+  border: none;
+  border-bottom: 1px dashed white;
   transition: 0.4s ease;
   font-family: mainFont;
   text-transform: capitalize;
-  font-size: 12px;
-  border-radius: 5px;
+  font-size: 1rem;
   position: relative;
   overflow: hidden;
-  z-index: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  transition: 0.2s ease;
 }
 .mainBtn:hover {
-  opacity: 0.8;
-  color: white;
+  /* border-color: var(--color1); */
+  border-bottom: 1px solid var(--color1);
   text-decoration: none;
-}
-.downloadBtn {
-  display: flex;
-  justify-content: space-between;
 }
 .imageContainer {
   overflow: hidden;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
 }
-.coverImg {
+.coverImage {
   height: 100%;
   width: 100%;
   object-fit: cover;
 }
-hr {
-  background-color: var(--sec-color);
+.breadcrumbContainer {
+  border-bottom: 1px solid #272727;
 }
-.bodyContainer {
-  overflow-y: auto;
-  max-height: 100vh;
-  padding: 0rem 0rem 4rem !important;
+#breadcrumbs a {
+  color: var(--color1);
 }
 
 /* ==========
-popular movies
+pagination
+ ========== */
+.pagination {
+  /* margin: 20px 0px; */
+  display: flex;
+  width: 100%;
+}
+.pagination .page-numbers {
+  background: var(--color2);
+  color: var(--color3);
+  border-radius: 3px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5);
+  padding: 5px 10px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 5px;
+  transition: 0.2s ease;
+}
+.pagination a:hover {
+  text-decoration: none;
+  background-color: var(--color3);
+  color: var(--color2);
+}
+.pagination .current {
+  color: black;
+  background: var(--color1);
+}
+.pagination .dots {
+  color: grey;
+  margin-right: 5px;
+}
+/* .pagination .prev,
+.pagination .next {
+  display: none;
+} */
+
+/* ==========
+Hero
+ ========== */
+.hero {
+  background-image: url(../images/hero.jpg);
+  background-size: cover;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ==========
+featured posts
  ========== */
 .overflowContainer {
   overflow-x: scroll;
+  margin-left: -15px;
+  margin-right: -15px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 .overflowContainer::-webkit-scrollbar {
   display: none;
@@ -125,115 +222,211 @@ popular movies
 .overflowContainer .row {
   flex-direction: row;
   flex-wrap: nowrap;
+  /* width: 100%; */
+}
+.featuredTitle {
   width: 100%;
-}
-
-/* ==========
- movie card
- ========== */
-.movieCard {
-  background-color: var(--sec-color);
-  height: 100%;
-}
-.movieCardDate {
-  font-size: 0.6rem;
-  color: grey;
-}
-.movieCardRating {
-  color: #d4ca4c;
-  font-size: 0.6rem;
-}
-.movieCardRating span {
-  margin-left: 0.5px;
-}
-.movieCardImage {
-  height: 170px;
-}
-.movieCardImage img {
-  transition: 0.2s ease;
-}
-.movieCardTitle {
   color: white;
-  text-transform: capitalize;
+  font-family: titleFont;
+}
+/* ==========
+Card
+ ========== */
+.card {
+  border-radius: 5px !important;
+  border-color: var(--color2) !important;
+  background-color: var(--color2) !important;
+  overflow: hidden;
+}
+.card .featuredImageContainer {
+  height: 200px;
+}
+.card-body {
+  background-color: var(--color2);
+}
+.card-body a {
   transition: 0.2s ease;
+  color: var(--color2);
 }
-.movieCardLink {
+.card-body a:hover {
   text-decoration: none;
 }
-.movieCardLink:hover {
-  text-decoration: none;
+.card-body a .title:hover {
+  color: var(--color1);
+  text-decoration: underline;
 }
-.movieCardLink:hover .movieCardImage img {
-  opacity: 0.8;
-  transform: scale(1.2);
+.card-title {
+  text-transform: capitalize;
 }
 
 /* ==========
- single movie
+Post
  ========== */
-.singleMovieImage {
-  background-color: var(--sec-color);
+.post .imageContainer {
+  max-height: 400px;
+  position: relative;
 }
-.singleMovieImage .imageContainer {
-  max-height: 450px;
-}
-.singleMovieYear {
-  color: var(--text-color);
-  font-size: 1.2rem;
-}
-.singleMovieYear a {
-  color: inherit;
-}
-.singleMovieYear a:hover {
-  color: inherit;
-}
-.singleMovieRating {
-  color: #d4ca4c;
-  font-size: 1.2rem;
-}
-.movieDescription {
-  color: var(--text-color) !important;
-}
-.movieDetail {
-  color: var(--text-color);
+.imageContainer .postTypeLabel {
+  background: var(--color1);
+  color: white;
+  position: absolute;
+  top: 15px;
+  left: 0;
+  font-size: 1rem;
   text-transform: capitalize;
 }
-.movieCategory {
-  border: 1px solid var(--text-color);
-  color: var(--text-color);
-  padding: 2px 5px;
-  border-radius: 3px;
-  margin-right: 2px;
-  margin-bottom: 5px;
-  display: inline-flex;
-  font-size: 0.8rem;
+.post-author {
+  text-transform: capitalize;
+}
+.singleImage .imageContainer {
+  max-height: 500px;
+  border-radius: 10px;
+}
+
+/* ==========
+side bar
+ ========== */
+.sideBarCategories ul {
+  margin: 0;
+  padding: 0;
+}
+.sideBarCategories ul li {
+  list-style-type: none;
+  padding: 5px 0px;
   transition: 0.2s ease;
 }
-.movieCategory:hover {
+.sideBarCategories ul li a {
+  color: var(--color3);
+  border-bottom: 1px dotted var(--color3);
+  display: flex;
+  padding-bottom: 10px;
+  transition: 0.2s ease;
+}
+.sideBarCategories ul li a:hover {
+  color: var(--color1);
+  padding-left: 10px;
   text-decoration: none;
-  background-color: var(--text-color);
+}
+.post .sideBarImageContainer {
+  max-height: 100px;
+}
+
+/* ==========
+newsletter
+ ========== */
+.newsletter {
+  background-color: var(--color1);
   color: black;
 }
+.newsletter .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.newsletter .container h2 {
+  font-family: labelFont;
+}
+.newsletter form {
+  background-color: black;
+  border-radius: 50px;
+  padding: 3px;
+  display: flex;
+}
+.newsletter form input {
+  border: none;
+  border-radius: 50px;
+  padding: 10px 15px;
+  display: flex;
+  background: black;
+  color: var(--color3);
+}
+.newsletter form input:focus {
+  outline: none;
+  border: none;
+}
+.newsletter form button {
+  background-color: var(--color1);
+  border-radius: 50px;
+  color: black;
+  border: none;
+  padding: 10px 15px;
+}
 
+/* ==========
+footer
+ ========== */
+.footer {
+  background-color: black;
+  color: white;
+}
+.footer .footerContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.footer .footerSocials {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.footer .footerSocials a {
+  background-color: white;
+  padding: 8px;
+  height: 30px;
+  width: 30px;
+  border-radius: 50px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  transition: 0.2s ease;
+}
+.footer .footerSocials a:hover {
+  text-decoration: none;
+  background-color: var(--color1);
+}
+.footer .footerCopy {
+  border-top: 1px solid var(--color2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+/* ==========
+Tab and PC
+ ========== */
 @media screen and (min-width: 576px) {
-  .movieCardImage {
-    height: 250px;
+  /*newsletter*/
+  .newsletter .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    text-align: initial;
+  }
+  /*footer*/
+  .footer .footerContent {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: initial;
+  }
+  .footer .footerSocials {
+    align-items: flex-end;
+  }
+  .footer .footerCopy {
+    justify-content: space-between;
+    flex-direction: row;
   }
 }
-@media screen and (min-width: 992px) {
-  .movieCardImage {
-    height: 210px;
-  }
-  *::-webkit-scrollbar {
-    background-color: var(--sec-color);
-    width: 10px;
-  }
-  *::-webkit-scrollbar-thumb {
-    background-color: grey;
-    border-radius: 8px;
-    border: 1px solid var(--sec-color);
-  }
-  *::-webkit-scrollbar-thumb:hover {
-    background-color: darkgrey;
-  }
+
+/* ==========
+PC
+ ========== */
+@media screen and (min-width: 768px) {
 }

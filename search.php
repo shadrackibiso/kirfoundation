@@ -18,9 +18,15 @@
                     if ( have_posts() ) : while ( have_posts() ) : the_post();
                     ?>
                     <!--  -->
-                    <?php get_template_part('templates/movie-card') ?>
+                    <?php get_template_part('templates/post-card-template') ?>
                     <!--  -->
                     <?php endwhile; // end while ?>
+                    <!-- pagination -->
+                    <div class="col-12 mt-3">
+                        <div class="pagination p-1">
+                            <?php echo paginate_links() ?>
+                        </div>
+                    </div>
                     <?php else: ?>
                         <p style="color: grey">Oops! No result found.</p>
                     <?php
