@@ -137,6 +137,44 @@ article p {
   border-bottom: 1px solid var(--color1);
   text-decoration: none;
 }
+.btn-2 {
+  background: var(--color1);
+  color: black;
+  padding: 8px 12px;
+  border: 1px dashed var(--color1);
+  transition: 0.4s ease;
+  font-family: mainFont;
+  text-transform: capitalize;
+  font-size: 1rem;
+  position: relative;
+  overflow: hidden;
+  transition: 0.2s ease;
+  border-radius: 50px;
+}
+.btn-2:hover {
+  text-decoration: none;
+  color: var(--color1);
+  background: rgba(0, 0, 0, 0);
+}
+.btn-3 {
+  background: black;
+  color: var(--color1);
+  padding: 8px 12px;
+  border: 1px dashed black;
+  transition: 0.4s ease;
+  font-family: mainFont;
+  text-transform: capitalize;
+  font-size: 1rem;
+  position: relative;
+  overflow: hidden;
+  transition: 0.2s ease;
+  border-radius: 50px;
+}
+.btn-3:hover {
+  text-decoration: none;
+  color: black;
+  background: rgba(0, 0, 0, 0);
+}
 .imageContainer {
   overflow: hidden;
   display: flex;
@@ -200,10 +238,18 @@ Hero
 .hero {
   background-image: url(../images/hero.jpg);
   background-size: cover;
-  height: 400px;
+  background-position: center;
+  height: 300px;
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
+  background-color: var(--color1);
+  background-blend-mode: multiply;
+}
+.hero h4 {
+  font-family: titleFont;
+  color: white;
 }
 
 /* ==========
@@ -286,6 +332,9 @@ Post
 /* ==========
 side bar
  ========== */
+.sidebar {
+  border: 2px solid var(--color2);
+}
 .sideBarCategories ul {
   margin: 0;
   padding: 0;
@@ -310,6 +359,62 @@ side bar
 .post .sideBarImageContainer {
   max-height: 100px;
 }
+.sidebarJoinBanner {
+  background: var(--color1);
+  color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+  border-radius: 5px;
+}
+.sidebarJoinBanner .title {
+  color: black;
+}
+.searchForm {
+  background-color: inherit;
+  border: 2px solid var(--color1);
+  border-radius: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3px;
+}
+.searchForm input {
+  background: inherit;
+  border: none;
+  border-radius: 50px;
+  padding: 5px 12px;
+  color: white;
+  width: 100%;
+}
+.searchForm input:focus {
+  outline: none;
+}
+.searchForm button {
+  background: none;
+  border: none;
+  border-radius: 50px;
+  height: 35px;
+  width: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  color: white;
+  transition: 0.4s ease;
+}
+.searchForm button:hover {
+  background: var(--color1);
+  color: black;
+}
+.searchForm button:active,
+.searchForm button:focus {
+  outline: none;
+  border: none;
+}
+/* side bar end */
 
 /* ==========
 newsletter
@@ -361,6 +466,9 @@ footer
   background-color: black;
   color: white;
 }
+.footerLogo a img {
+  width: 150px;
+}
 .footer .footerContent {
   display: flex;
   flex-direction: column;
@@ -396,6 +504,7 @@ footer
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  color: var(--color3);
 }
 
 /* ==========
@@ -418,10 +527,6 @@ Tab and PC
   }
   .footer .footerSocials {
     align-items: flex-end;
-  }
-  .footer .footerCopy {
-    justify-content: space-between;
-    flex-direction: row;
   }
 }
 

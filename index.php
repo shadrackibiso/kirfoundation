@@ -1,5 +1,15 @@
 <?php get_header(); ?>
 <!-- ==========      
+    HERO
+===========-->
+<div class="hero">
+    <div class="container">
+        <h1 class="title">learn from our stories</h1>
+        <h4 class="mb-4">live a life far from mediocrity</h4>
+        <a href="/about" class="btn-3 mt-5">about greyich</a>
+    </div>
+</div>
+<!-- ==========      
     FEATURED  POSTS
 ===========-->
 <div class="mt-5">
@@ -13,11 +23,11 @@
         <!-- ==========      
             RECENT  POSTS
         ===========-->
-        <div class="col-lg-9">
+        <div class="col-lg-8">
             <div class="sectionLabel">
                 recent posts
             </div>
-            <div class="row mt-4 mb-4">
+            <div class="row mt-4 mb-3">
                 <?php
                     $paged = (get_query_var('page')) ? get_query_var('page') : 1;
 
@@ -47,11 +57,11 @@
                 endwhile; // end loop
                 ?>
                 <!-- pagination -->
-                <div class="col-12 mt-1">
+                <!-- <div class="col-12 mt-1">
                     <div class="pagination p-1">
                         <?php echo paginate_links(array('total' => $query->max_num_pages)) ?>
                     </div>
-                </div>
+                </div> -->
                 <!--  -->
                 <?php else: ?>
                     <div class="col-12">
@@ -64,11 +74,15 @@
                 endif;
                 ?>
             </div>
+            <div class="mb-5 d-flex justify-content-center d-lg-block">
+                <a href="#" class="btn-2">view all posts</a>
+            </div>
         </div>
+
         <!-- ==========      
             SIDE BAR
         ===========-->
-        <div class="col-lg-3">
+        <div class="col-lg-4">
         <?php get_template_part('templates/sidebar') ?>
         </div>
     </div>

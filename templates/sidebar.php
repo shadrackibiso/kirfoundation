@@ -1,8 +1,20 @@
-<div class="mb-5">
-     <!-- ==========      
-            POPULAR  POSTS
+<div class="mb-5 p-4 sidebar">
+
+    <!-- ==========      
+    SEARCH BOX
     ===========-->
-    <div class="sectionLabel">
+    <form method="POST" class="mb-5 searchForm shadow-sm">
+        <input type="text" name="s" placeholder="Search..." />
+        <button>
+            <i class="fa fa-search"></i>
+        </button>
+    </form>
+    <!-- search box end -->
+
+    <!-- ==========      
+    POPULAR  POSTS
+    ===========-->
+    <div class="sectionLabel d-flex justify-content-center">
         popular posts
     </div>
     <div class="row mt-4">
@@ -35,9 +47,9 @@
                         <?php echo get_the_date(); ?>
                     </p>
                     <!-- title -->
-                    <h6 class="post-title title">
+                    <h5 class="post-title title">
                         <?php the_title(); ?>
-                    </h6>
+                    </h5>
                     <!-- button -->
                     <a href="<?php the_permalink(); ?>" class="mainBtn">read more</a>
                 </div>
@@ -59,12 +71,22 @@
     endif;
     ?>
     </div>
+    <!-- popular posts end -->
+
+    <!-- ==========      
+        JOIN GREYICH
+    ===========-->
+    <div class="sidebarJoinBanner p-3 mt-5 mb-3 shadow-sm text-center">
+        <h3 class="text-capitalize title">share your stories.</h3>
+        <a href="#" class="btn-3 mt-3">join greyich</a>
+    </div>
+    <!-- join greyich end -->
 
     <!-- ==========      
         CATEGORIES
     ===========-->
-    <div class="mt-3">
-        <div class="sectionLabel">
+    <div class="mt-5">
+        <div class="sectionLabel d-flex justify-content-center">
             categories
         </div>
         <div class="sideBarCategories">
@@ -90,5 +112,7 @@
             </ul>
         </div>
     </div>
+    <!-- categories end -->
+
     <!--  -->
 </div>

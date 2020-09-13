@@ -24,7 +24,9 @@
         </div>
         <!--  -->
         <?php else: ?>
-        <p style="color: grey">Sorry, no post to display.</p>
+            <div class="col-12">
+                <p>Sorry, no post to display.</p>
+            </div>
         <?php
         // Reset things
         wp_reset_postdata();
