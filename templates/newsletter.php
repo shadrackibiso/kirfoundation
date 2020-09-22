@@ -1,20 +1,15 @@
-<div class="newsletter mt-4">
-    <div class="container">
-        <img src="<?php echo get_template_directory_uri(); ?>/images/dots.svg" width="100px" />
-    </div>
+<div class="newsletter">
     <div class="container section">
-        <div>
-            <h2 class="font-weight-bold">Newsletter</h2>
-            <h6 class="mb-0">Subscribe and get latest news, useful tips, advice and best offer.</h6>
+        <div class=" d-flex justify-content-center align-items-center flex-column">
+            <h5 class="color1 text-uppercase mb-4">Newsletter</h5>
+            <h1 class="mb-0 text-black text-capitalize">Subscribe now
+                and receive the weekly newsletter</h1>
         </div>
-        <form class="mt-4 mt-md-0 shadow">
+        <form class="mt-4">
             <input type="email" placeholder="Enter your email..." required />
-            <button type="submit" title="subscribe">
-                <i class="fa fa-paper-plane"></i>
+            <button type="submit" title="subscribe" class="text-uppercase mt-3 mt-md-0">
+                subscribe
             </button>
         </form>
-    </div>
-    <div class="container d-flex justify-content-end">
-        <img src="<?php echo get_template_directory_uri(); ?>/images/dots.svg" width="100px" />
     </div>
 </div>
